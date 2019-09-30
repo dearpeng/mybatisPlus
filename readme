@@ -1,0 +1,11 @@
+1:mybatisplus
+    1.1 整合mybatisplus
+        1.1.1:导包
+        1.1.2:使用mybatisplus代码生成器
+            1.1.2.1: 导包
+            1.1.2.2: 具体看CodeGenerator类
+        1.1.2.3:application.properties 配置mysql数据库,mybatisplus在MybatisplusApplication中使用注解了
+        1.1.2.4:这个时候可以使用了,基本的crud
+    1.2 mybatisplus分页
+        1.2.1: 配置分页插件 MybatisPlusConfig  paginationInterceptor
+        1.2.2: 在单元测试方法中testPage完成测试
