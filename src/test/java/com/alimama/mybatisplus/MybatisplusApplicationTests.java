@@ -36,7 +36,6 @@ public class MybatisplusApplicationTests {
         Page<Employee> page = new Page<>();
         page.setCurrent(1);
         page.setSize(3);
-        page.setPages(2);
         IPage<Employee> employees = employeeService.selectEmployeeListByPage(page);
         System.out.println("=============================================");
         System.out.println("获取的总记录数:" + JSON.toJSONString(employees.getRecords()));
