@@ -5,4 +5,7 @@
     <select id="selectEmployeeListByPage" resultType="com.alimama.mybatisplus.entity.Employee">
         select  * from  employee
     </select>
+    <select id="testXmlWrapper" resultType="com.alimama.mybatisplus.entity.Employee">
+        select  * from  employee ${ew.customSqlSegment}
+    </select>
 </mapper>

@@ -127,13 +127,13 @@ public class CodeGenerator {
         strategy.setNaming(NamingStrategy.underline_to_camel);
         //设置数据库表字段和实体类中属性的映射策略  数据库表字段下划线转实体类属性驼峰命名
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        //自定义继承的Entity类全称，带包名
+        //自定义继承的Entity类全称，带包名,自己写的实体类继承哪个父实体类
         strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
         //是否为lombok模型 是不是使用lombok模式
         strategy.setEntityLombokModel(true);
         //生成的controller是否是restfull的controller  加上@RestController
         strategy.setRestControllerStyle(true);
-        // 公共父类
+        // 公共父类,自己写的controller继承哪个父controller
         strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
         // 写于父类中的公共字段
         strategy.setSuperEntityColumns("id");
