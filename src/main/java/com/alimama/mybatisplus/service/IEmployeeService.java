@@ -47,4 +47,10 @@ public interface IEmployeeService extends IService<Employee> {
      */
     List<Employee> testXmlWrapper(QueryWrapper<Employee> queryWrapper);
 
+    /**
+     * 逻辑删除,mybatisplus
+     * @param wrapper
+     * @return
+     */
+    Integer logicDelete(QueryWrapper<Employee> wrapper);
 }

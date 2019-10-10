@@ -114,6 +114,29 @@ public class MybatisplusApplicationTests {
         System.out.println("=============================================");
     }
 
+    /**
+     * 删除,没有逻辑删除前
+     */
+    @Test
+    public void testlogicDelete() {
+        Integer integer = employeeService.logicDelete(new QueryWrapper<Employee>().eq("department_id",3L));
+        System.out.println("=============================================");
+        System.out.println(integer);
+        System.out.println("=============================================");
+    }
+
+
+    /**
+     * 删除,使用逻辑删除
+     */
+    @Test
+    public void testSelfLogicDelete() {
+        Boolean integer= employeeService.remove(new QueryWrapper<Employee>().eq("department_id",3L));
+        System.out.println("=============================================");
+        System.out.println(integer);
+        System.out.println("=============================================");
+    }
+
 
 
 }

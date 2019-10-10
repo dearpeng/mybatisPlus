@@ -47,4 +47,9 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     public List<Employee> testXmlWrapper(QueryWrapper<Employee> queryWrapper) {
         return employeeMapper.testXmlWrapper(queryWrapper);
     }
+
+    @Override
+    public Integer logicDelete(QueryWrapper<Employee> wrapper) {
+        return employeeMapper.delete(wrapper);
+    }
 }

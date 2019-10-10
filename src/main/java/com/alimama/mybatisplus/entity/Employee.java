@@ -2,6 +2,8 @@ package com.alimama.mybatisplus.entity;
 
 import java.time.LocalDate;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -61,5 +63,10 @@ public class Employee implements Serializable {
      */
     private String salt;
 
+    /**
+     * 是否删除 0:否 1:是
+     */
+    @TableLogic
+    private Integer isDelete;
 
 }
