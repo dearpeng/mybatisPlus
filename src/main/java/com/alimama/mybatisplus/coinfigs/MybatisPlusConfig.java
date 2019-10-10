@@ -2,6 +2,7 @@ package com.alimama.mybatisplus.coinfigs;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
+import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
 import net.sf.jsqlparser.statement.delete.Delete;
@@ -46,5 +47,14 @@ public class MybatisPlusConfig {
         });
         paginationInterceptor.setSqlParserList(sqlParserList);
         return paginationInterceptor;
+    }
+
+    /**
+     * 乐观锁配置
+     * @return
+     */
+    @Bean
+    public OptimisticLockerInterceptor optimisticLockerInterceptor() {
+        return new OptimisticLockerInterceptor();
     }
 }

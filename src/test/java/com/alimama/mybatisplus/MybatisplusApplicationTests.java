@@ -5,8 +5,11 @@ import com.alimama.mybatisplus.entity.Employee;
 import com.alimama.mybatisplus.mapper.EmployeeMapper;
 import com.alimama.mybatisplus.service.IEmployeeService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.additional.update.impl.UpdateChainWrapper;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import net.bytebuddy.matcher.ElementMatcher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -137,6 +140,19 @@ public class MybatisplusApplicationTests {
         System.out.println("=============================================");
     }
 
+
+    /**
+     * 更新,乐观锁
+     */
+    @Test
+    public void testUpdateOptimisticLock() {
+        Employee employee = new Employee();
+        employee.setVersion(3);
+        Boolean integer= employeeService.update(employee,new UpdateWrapper<Employee>().eq("department_id",3L));
+        System.out.println("=============================================");
+        System.out.println(integer);
+        System.out.println("=============================================");
+    }
 
 
 }

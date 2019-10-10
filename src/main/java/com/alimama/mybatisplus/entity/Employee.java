@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -65,8 +66,16 @@ public class Employee implements Serializable {
 
     /**
      * 是否删除 0:否 1:是
+     * 逻辑删除注解
      */
     @TableLogic
     private Integer isDelete;
+
+    /**
+     * 乐观锁版本控制
+     * 注解
+     */
+    @Version
+    private Integer version;
 
 }

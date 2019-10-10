@@ -21,3 +21,7 @@
         1.5.1: 增加p6spy 依赖
         1.5.2: 修改DataSource连接数据driver-class-name和url
         1.5.3: 增加spy.properties 配置文件
+    1.6 乐观锁插件
+        1.6.1: 配置中增加乐观锁拦截器optimisticLockerInterceptor
+        1.6.2: 版本号增加@Version注解
+        1.6.3: 测试testUpdateOptimisticLock
