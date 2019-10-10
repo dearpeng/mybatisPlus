@@ -87,9 +87,9 @@ public class MybatisplusApplicationTests {
      */
     @Test
     public void testWrapperCustomSql() {
-        List<Employee> list = employeeService.mapperJavaWrappperSql(new QueryWrapper<Employee>().like("department_id",3l));
+        List<Employee> list = employeeService.mapperJavaWrappperSql(new QueryWrapper<Employee>().eq("department_id",3l));
         System.out.println("=============================================");
-        System.out.println(list);
+        System.out.println(JSON.toJSONString(list));
         System.out.println("=============================================");
     }
 
@@ -102,7 +102,7 @@ public class MybatisplusApplicationTests {
         employee.setDepartmentId(3l);
         List<Employee> list = employeeService.mapperJavaWrappperSql2(employee);
         System.out.println("=============================================");
-        System.out.println(list);
+        System.out.println(JSON.toJSONString(list));
         System.out.println("=============================================");
     }
 

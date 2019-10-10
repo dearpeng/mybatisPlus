@@ -1,0 +1,17 @@
+#数据库连接配置,动态多数据源,单数据源的在application.properties中
+spring:
+  datasource:
+    dynamic:
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      datasource:
+        master:
+          username: root
+          password: admin
+          driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+          url: jdbc:p6spy:mysql://localhost:3306/cls?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        slave_1:
+          username: ftcs_cls
+          password: 12ftcs_cls12@Chedai
+          driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+          url: jdbc:p6spy:mysql://192.168.27.7:3306/cls?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+#以上会配置一个默认库master，一个组slave下有两个子库slave_1

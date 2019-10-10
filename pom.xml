@@ -73,6 +73,14 @@
             <version>3.8.6</version>
         </dependency>
 
+        <!--动态数据源配置-->
+        <!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+
 
 
         <!-- <dependency>

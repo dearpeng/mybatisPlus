@@ -1,6 +1,7 @@
 package com.alimama.mybatisplus.mapper;
 
 import com.alimama.mybatisplus.entity.Employee;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -32,9 +33,11 @@ public interface EmployeeMapper extends BaseMapper<Employee> {
      */
     IPage<Employee> selectEmployeeListByPage(Page<Employee> page);
 
+    @DS("master")
     @Select("select * from employee ${ew.customSqlSegment}")
     List<Employee> mapperJavaWrappperSql(@Param(Constants.WRAPPER)QueryWrapper<Employee> eq);
 
+    @DS("slave_1")
     @Select("select * from employee where department_id = #{employee.departmentId}")
     List<Employee> mapperJavaWrappperSql2(@Param("employee") Employee employee);
 
